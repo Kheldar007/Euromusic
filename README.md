@@ -8,5 +8,5 @@ Banques de données multimédia
 
 ## Références
 
-[Gizmodo](http://gizmodo.com/5647458/how-shazam-works-to-identify-nearly-every-song-you-throw-at-it)
-[Columbia University (New York)](http://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf)
+[Gizmodo](http://gizmodo.com/5647458/how-shazam-works-to-identify-nearly-every-song-you-throw-at-it)  
+[Columbia University (New York)](http://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf)  
