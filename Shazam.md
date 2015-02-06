@@ -1,6 +1,6 @@
 # Fonctionnement de **Shazam**
 
-![Shazam](https://c1.staticflickr.com/9/8500/8296481199_3d83f07d69_z.jpg)
+![Shazam](Data/Shazam2.jpg)
 
 1. Garder les *fingerprints* (en table de hachage) d'un catalogue de musique
 dans une banque de données.
