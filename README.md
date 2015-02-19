@@ -8,10 +8,19 @@ Banques de données multimédia
 
 ## Références
 
-[Gizmodo](http://gizmodo.com/5647458/how-shazam-works-to-identify-nearly-every-song-you-throw-at-it)  
-[Columbia University (New York)](http://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf)  
-[So, you code ?)](http://www.soyoucode.com/2011/how-does-shazam-recognize-song)  
-[Echo Nest Remix - Python API](http://echonest.github.io/remix/)  
-[Article - Classification of dance music by periodicity patterns](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.414.9917&rep=rep1&type=pdf)  
-[Article - Characterisation of music via rhythmic patterns](http://mtg.upf.edu//ismir2004/review/CRFILES/paper165-b28308914f720be8d4c5f00bf2a5c9aa.pdf)  
-[Article - Fast and robust meter and tempo recognition for the automatic discrimination of ballroom dance styles](http://mediatum.ub.tum.de/doc/1138560/1138560.pdf)
+[Gizmodo](https://gizmodo.com/5647458/how-shazam-works-to-identify-nearly-every-song-you-throw-at-it)  
+[Columbia University (New York)](https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf)  
+[So, you code ?)](https://www.soyoucode.com/2011/how-does-shazam-recognize-song)  
+
+### Articles
+
+[Classification of dance music by periodicity patterns](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.414.9917&rep=rep1&type=pdf)  
+[Characterisation of music via rhythmic patterns](https://mtg.upf.edu//ismir2004/review/CRFILES/paper165-b28308914f720be8d4c5f00bf2a5c9aa.pdf)  
+[Fast and robust meter and tempo recognition for the automatic discrimination of ballroom dance styles](https://mediatum.ub.tum.de/doc/1138560/1138560.pdf)
+
+### Software
+[Echo Nest Remix - Python API to analyse sound](https://echonest.github.io/remix/)  
+[Musicbrainz - Web Service (with Python API) to get song title from fingerprint](https://musicbrainz.org/doc/python-musicbrainz2)
+
+### Data
+[(German) crowd sourced database of song-dance-correspondencies](https://www.tanzmusik-online.de/)
