@@ -2,7 +2,7 @@
 
 1. Suis ce [guide d'installation (anglais)](http://echonest.github.io/remix/installsource.html).
 
-2. Obtiens un API Key (on pourrait aussi utiliser tous le mien, mais c'est gratuit et vite fait...)
+2. Obtiens un API Key (on pourrait aussi utiliser tous le même, mais c'est gratuit et vite fait...)
 
 3. Ajoute cette ligne au ficher ~/.bash_profile
    export ECHO_NEST_API_KEY="ton API Key"
@@ -13,6 +13,6 @@
    python one/one.py music/Karl_Blau-Gnos_Levohs.mp3 AllOnTheOne.mp3
 
 # Liens utiles
-[Bref aperçu et bonnes explications](https://atl.me/overview)
-[Tutorial](http://echonest.github.io/remix/tutorial.html)
+[Bref aperçu et bonnes explications](https://atl.me/overview)  
+[Tutorial](http://echonest.github.io/remix/tutorial.html)  
 [Documentation complete](http://echonest.github.io/remix/apidocs/)
