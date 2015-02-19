@@ -4,8 +4,10 @@
 
 2. Obtiens un API Key (on pourrait aussi utiliser tous le même, mais c'est gratuit et vite fait...)
 
-3. Ajoute cette ligne au ficher ~/.bash_profile
+3. Ajoute cette ligne au ficher `~/.bash_profile`
+   ```
    export ECHO_NEST_API_KEY="ton API Key"
+   ```
 
 4. Redémarre la console
 
