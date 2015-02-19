@@ -11,8 +11,11 @@
 
 4. Redémarre la console
 
-5. Il y a beaucoup d'examples dans /usr/local/share/echo-nest-remix-examples. Pour tester, on peut par exemple aller dans ce dossier et taper:
+5. Il y a beaucoup d'examples dans `/usr/local/share/echo-nest-remix-examples`.  
+   Pour tester, on peut par exemple aller dans ce dossier et taper:
+   ```
    python one/one.py music/Karl_Blau-Gnos_Levohs.mp3 AllOnTheOne.mp3
+   ```
 
 # Liens utiles
 [Bref aperçu et bonnes explications](https://atl.me/overview)  
