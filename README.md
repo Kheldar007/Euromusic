@@ -15,7 +15,7 @@ Banques de données multimédia
 ### Articles
 
 [Classification of dance music by periodicity patterns](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.414.9917&rep=rep1&type=pdf)  
-[Characterisation of music via rhythmic patterns](https://mtg.upf.edu//ismir2004/review/CRFILES/paper165-b28308914f720be8d4c5f00bf2a5c9aa.pdf)  
+[Characterisation of music via rhythmic patterns](http://mtg.upf.edu//ismir2004/review/CRFILES/paper165-b28308914f720be8d4c5f00bf2a5c9aa.pdf)  
 [Fast and robust meter and tempo recognition for the automatic discrimination of ballroom dance styles](https://mediatum.ub.tum.de/doc/1138560/1138560.pdf)
 
 ### Software

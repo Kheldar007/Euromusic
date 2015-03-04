@@ -16,7 +16,7 @@ def main(filename):
     tempo = song.analysis.tempo
     bpm = "%.0f" % round(tempo['value'])
     confidence = "%0.1f" % (tempo['confidence']*100)
-    print("With an accuracy of " + confidence + " % this song has " + bpm + " bmp.")
+    print("With an accuracy of " + confidence + " % this song has " + bpm + " bpm.")
 
 
 if __name__ == '__main__':
