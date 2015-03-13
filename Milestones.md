@@ -2,8 +2,10 @@
 
 - [ ] récuperation automatique des métadonnées
 	- [ ] danse
-		- [ ] basé sur des règles (Tempo, Meter; cf. Dixon et all. 2003)
-		- [ ] basé sur un algo d'apprentissage (traits distinctifs?) (scikit-learn)
+		- [ ] _peut-être_ basé sur des règles (Tempo, Meter; cf. Dixon et all. 2003; les règles ne sont pas trop bonnes)
+		- [ ] basé sur un algo d'apprentissage (scikit-learn)
+		      	   - [ ] Trouver des traits distinctifs (Tempo, Meter, motif rythmique, ...?) (Echo Nest Remix)
+			   - [ ] Construire une base de chansons (lescharts.com, tanzmusik-online.de, youtube-dl)
 		- [ ] évaluation (matrice de confusion)
 
 	- [ ] titre, interprète (Musicbrainz)

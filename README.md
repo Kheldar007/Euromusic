@@ -20,7 +20,10 @@ Banques de données multimédia
 
 ### Software
 [Echo Nest Remix - Python API to analyse sound](https://echonest.github.io/remix/)  
-[Musicbrainz - Web Service (with Python API) to get song title from fingerprint](https://musicbrainz.org/doc/python-musicbrainz2)
+[Musicbrainz - Web Service (with Python API) to get song title from fingerprint](https://musicbrainz.org/doc/python-musicbrainz2)  
+[youtube-dl - Python Library to download videos/songs from youtube](https://github.com/rg3/youtube-dl/)  
+[scikit-learn - Python Library for machine learning](http://scikit-learn.org/stable/)
 
 ### Data
-[(German) crowd sourced database of song-dance-correspondencies](https://www.tanzmusik-online.de/)
+[(German) crowd sourced database of song-dance-correspondencies](https://www.tanzmusik-online.de/)  
+[French Single Charts](http://www.lescharts.com/weekchart.asp?cat=s)
