@@ -3,7 +3,7 @@
 - [ ] récuperation automatique des métadonnées
 	- [ ] danse
 		- [ ] basé sur des règles (Tempo, Meter; cf. Dixon et all. 2003)
-		- [ ] basé sur un algo d'apprentissage (traits distinctifs?)
+		- [ ] basé sur un algo d'apprentissage (traits distinctifs?) (scikit-learn)
 		- [ ] évaluation (matrice de confusion)
 
 	- [ ] titre, interprète (Musicbrainz)
