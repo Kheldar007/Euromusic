@@ -6,10 +6,10 @@ import youtube_dl
 
 usage = """
 Usage: 
-    python loadFromYoutube.py <URL>
+    python youtube-dl.py <URL>
 
 Example:
-    python 'http://www.youtube.com/watch?v=BaW_jenozKc'
+    python youtube-dl.py 'http://www.youtube.com/watch?v=BaW_jenozKc'
 """
 
 class MyLogger(object):
