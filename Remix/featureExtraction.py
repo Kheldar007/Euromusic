@@ -71,3 +71,27 @@ def getHighestTwoTatumPeaks(bar):
     
     s_peaks = sorted(peaks, key=lambda p: p[0], reverse=True)
     return (s_peaks[0][1], s_peaks[min(2, childNum-1)][1])
+
+
+def extractBPM(song):
+    tempo = song.analysis.tempo
+    bpm = "%.0f" % round(tempo['value'])
+    return bpm
+
+
+def extractRhythmicPattern(song):
+    barPatterns = []
+    for bar in song.children():
+        pattern = []
+        for beat in bar.children():
+            for tatum in beat.children():
+                pattern.append(tatum.mean_loudness())
+        barPatterns.append(pattern)
+
+    rhythm = barPatterns[0]
+    for barPattern in barPatterns[1:]:
+        for in in range(0, len(barPattern)):
+            rhythm[i] += barPattern[0]
+
+    map(lambda x: x/len(barPatterns), rhythm)
+    return rhythm
