@@ -44,7 +44,7 @@ def loadSongs(songs, outputfolder):
                 print "DOWNLOADING",title
                 decoded_url=urllib.unquote(url).decode('utf8')
                 print decoded_url
-                subprocess.call(['youtube-dl','-o',outputfolder+'/%(title)s.(ext)s',"--extract-audio","--audio-format","mp3",decoded_url])
+                subprocess.call(['youtube-dl','-o',outputfolder+'/'+str(song_num)+'_%(title)s.(ext)s',"--extract-audio","--audio-format","mp3",decoded_url])
                 break;
         print song_num
         time.sleep(randint(10,15))
