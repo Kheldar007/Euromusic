@@ -81,7 +81,9 @@ def extractBPM(song):
 
 def extractRhythmicPattern(song):
     barPatterns = []
-    for bar in song.children():
+    meanLoudness = 0
+    for bar in song.analysis.bars:
+        meanLoudness += bar.mean_loudness()
         pattern = []
         for beat in bar.children():
             for tatum in beat.children():
@@ -90,8 +92,11 @@ def extractRhythmicPattern(song):
 
     rhythm = barPatterns[0]
     for barPattern in barPatterns[1:]:
-        for in in range(0, len(barPattern)):
-            rhythm[i] += barPattern[0]
+        for i in range(0, len(barPattern)):
+            rhythm[i] += barPattern[i]
 
-    map(lambda x: x/len(barPatterns), rhythm)
+
+    meanLoudness /= len(barPatterns)
+    rhythm = map(lambda x: x/len(barPatterns), rhythm)
+    rhythm = map(lambda x: x/meanLoudness, rhythm)
     return rhythm
