@@ -93,6 +93,8 @@ def extractRhythmicPattern(song):
     rhythm = barPatterns[0]
     for barPattern in barPatterns[1:]:
         for i in range(0, len(barPattern)):
+            if (i >= len(rhythm)):
+                rhythm.append(barPattern[i])
             rhythm[i] += barPattern[i]
 
 
