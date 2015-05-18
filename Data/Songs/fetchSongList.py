@@ -18,6 +18,7 @@ def main():
     with open("songData.tab", 'w') as f:
         for dance in ['samba', 'cha-cha-cha', 'rumba', 'paso-doble', 'jive', 'langsamer-walzer', 'tango', 'wiener-walzer', 'foxtrott', 'salsa']:
             doTheWork(dance, f)
+            print("Downloaded " + dance + " data")
 
 
 def doTheWork(nameOfDance, f):
