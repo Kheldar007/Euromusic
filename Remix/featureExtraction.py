@@ -98,5 +98,5 @@ def extractRhythmicPattern(song):
 
     meanLoudness /= len(barPatterns)
     rhythm = map(lambda x: x/len(barPatterns), rhythm)
-    rhythm = map(lambda x: x/meanLoudness, rhythm)
+    rhythm = map(lambda x: x/meanLoudness - 1, rhythm)
     return rhythm
