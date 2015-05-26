@@ -2,7 +2,7 @@
 # encoding: utf=8
 
 import echonest.remix.audio as audio
-from featureExtraction import extractBPM, extractRhythmicPattern
+from featureExtraction import extractBPM, extractRhythmicPattern, extractMeter
 
 usage = """
 Usage: 
@@ -16,9 +16,11 @@ def main(filename):
     song = audio.LocalAudioFile(filename)
     bpm = extractBPM(song)
     pattern = extractRhythmicPattern(song)
+    meter = extractMeter(song)
 
     print("This song has " + bpm + " bpm.")
     print("The rhythmic pattern is " + str(pattern))
+    print("The time signature of this song is " + str(meter))
 
 
 if __name__ == '__main__':

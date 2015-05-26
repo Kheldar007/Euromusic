@@ -78,6 +78,9 @@ def extractBPM(song):
     bpm = "%.0f" % round(tempo['value'])
     return bpm
 
+def extractMeter(song):
+    meter = song.analysis.time_signature
+    return meter['value']
 
 def extractRhythmicPattern(song):
     barPatterns = []
