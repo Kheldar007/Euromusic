@@ -19,7 +19,7 @@ python setup.py install --install-layout=deb
 ```
 
 
-# Installer AcousID (fingerprinting).
+# Installer AcoustID (key = OpMtWpZO).
 
 1. Installer cmake.
 
