@@ -93,6 +93,10 @@ def extractRhythmicPattern(song):
                 pattern.append(tatum.mean_loudness())
         barPatterns.append(pattern)
 
+    if len(song.analysis.bars) == 0:
+        print("Warning: we found a song whose bars could not be analysed!")
+        return []
+
     rhythm = barPatterns[0]
     for barPattern in barPatterns[1:]:
         for i in range(0, len(barPattern)):

@@ -4,74 +4,83 @@
 import echonest.remix.audio as audio
 from featureExtraction import extractBPM, extractRhythmicPattern, extractMeter
 from glob import glob
-#from sklearn import svm
-from sklearn.naive_bayes import GaussianNB
+from sklearn import svm
+#from sklearn.naive_bayes import GaussianNB
 from sklearn.externals import joblib
 from sklearn.feature_extraction import DictVectorizer
 import numpy as np
 import time
 import sys
+import pyechonest.util
+
+# for automatic testing
+from sklearn.cross_validation import train_test_split
+from sklearn.metrics import confusion_matrix
+from sklearn import metrics
+from sklearn import cross_validation
 
 usage = """
 Usage: 
-    python train.py <TrainDataFilename> <SongFileDirectory>
+    python train.py <TrainDataFilename>
 
 Example:
-    python train.py songData.tab chansons/
+    python train.py songDataFull.tab
 """
 
-def main(filename, dirName):
+def main(filename):
     target = []
     data = []
-    with open(filename, 'r') as f:
-        num = 1
+    with open(filename,'r') as f:
         for line in f:
-            songFileNames = glob(dirName.rstrip('/') + '/' + str(num) + '_*')
-
-            if len(songFileNames) == 0:
-                print("There's no song for number " + str(num))
-                num += 1
-                continue
-            if len(songFileNames) > 1:
-                print("Warning: We found too much songs for number " + str(num))
-
-            print("We found " + songFileNames[0] + " for number " + str(num))
-
-            song = None
-            while (song == None):
-                try:
-                    song = audio.LocalAudioFile(songFileNames[0])
-                except:
-                    e = sys.exc_info()[0]
-                    print("%s" % e)
-                    print("I will sleep 30 seconds ...")
-                    time.sleep(30)
-
-            rhythm = extractRhythmicPattern(song)
-            if len(rhythm) != 8:
-                data.append({'bpm':extractBPM(song), 'meter':extractMeter(song)})
-            else:
-                data.append({'bpm':extractBPM(song), 'meter':extractMeter(song), 'rhythm0':rhythm[0], 'rhythm1':rhythm[1], 'rhythm2':rhythm[2], 'rhythm3':rhythm[3], 'rhythm4':rhythm[4], 'rhythm5':rhythm[5], 'rhythm0':rhythm[6], 'rhythm0':rhythm[7]})
+            fields = line.split("\t")
+            target.append(fields[1])
+            features = {}
+            features['bpm'] = fields[2]
+            features['meter'] = fields[3].rstrip()
+            #features['maxTone'] = fields[4].rstrip()
+            header_length = 4
+            if len(fields) > header_length:
+                for i in range(8):
+                    features['rhythm' + str(i)] = fields[i+header_length].rstrip()
             
+            data.append(features)
+                
 
-            target.append(line.split("\t")[2].rstrip())
-            num += 1
-
+    ### Do the training ###
     vec = DictVectorizer()
     data = vec.fit_transform(data).toarray()
-    clf = GaussianNB()
-    #clf = svm.SVC(gamma=0.001, C=100.) # parameters to be verified
-    clf.fit(data[:-1], np.asarray(target[:-1])) # learn from the data
+    target = np.asarray(target)
+    #clf = GaussianNB()
+    clf = svm.SVC(gamma=0.001, C=100.) # parameters to be verified
+    #clf.fit(data[:-1], target[:-1]) # learn from the data
+    
+
+    data_train, data_test, target_train, target_test = train_test_split(data, target)
+    print("Splitted the data. Now learning ...")
+    clf.fit(data_train, target_train) # learn from the data
+    print("Learned from the data. Now predicting ...")
     
     joblib.dump(vec, 'vectorizer.pkl')
     joblib.dump(clf, 'danceModel.pkl')
+
+    ### Testing ###
+
+    #target_pred = cross_validation.cross_val_predict(clf, data, target, cv=10)
+    #conf_matrix = confusion_matrix(target, target_pred)
+    #score = metrics.accuracy_score(target, target_pred)
+
+    #print(conf_matrix)
+    #print(score)
+
+    scores = cross_validation.cross_val_score(clf, data, target, cv=5)
+    print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std() * 2))
+
 
 
 if __name__ == '__main__':
     try:
         filename = sys.argv[1]
-        dirName = sys.argv[2]
     except:
         print usage
         sys.exit(-1)
-    main(filename, dirName)
+    main(filename)
