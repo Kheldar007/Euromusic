@@ -4,7 +4,7 @@
 	- [ ] danse
 		- [ ] _peut-être_ basé sur des règles (Tempo, Meter; cf. Dixon et all. 2003; les règles ne sont pas trop bonnes)
 		- [ ] basé sur un algo d'apprentissage (scikit-learn)
-			- [ ] Trouver des traits distinctifs (Tempo, Meter, motif rythmique, ...?) (Echo Nest Remix)
+			- [x] Trouver des traits distinctifs (Tempo, Meter, motif rythmique, ...?) (Echo Nest Remix)
 			- [x] Construire une base de chansons (lescharts.com, tanzmusik-online.de, youtube-dl)
 		- [ ] évaluation (matrice de confusion)
 
