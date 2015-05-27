@@ -34,3 +34,12 @@ apt-get install libqt4-dev
 ```
 
 3. Installer [chromaprint](https://acoustid.org/chromaprint).
+
+4. Installer AcoustID.
+
+
+```
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local .
+make
+sudo make install
+```
