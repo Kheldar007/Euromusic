@@ -17,3 +17,20 @@ apt-get install python-libdiscid (Python 2) ou apt-get install python3-libdiscid
 ```
 python setup.py install --install-layout=deb
 ```
+
+
+# Installer AcousID (fingerprinting).
+
+1. Installer cmake.
+
+```
+apt-get install cmake
+```
+
+2. Installer qt.
+
+```
+apt-get install libqt4-dev
+```
+
+3. Installer [chromaprint](https://acoustid.org/chromaprint).
