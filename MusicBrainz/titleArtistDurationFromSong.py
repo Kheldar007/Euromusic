@@ -1,14 +1,14 @@
 #!/usr/bin/python
 # encoding: utf=8
 
-# Print infos regarding the song given.
+# Genere les informations relatives a une certaine chanson.
 
 usage = """
 Usage: 
-    python TitleArtistFromSong.py <song.mp3>
+    python titleArtistDurationFromSong.py <song.mp3>
 
 Example:
-    python TitleArtistFromSong.py music.mp3
+    python titleArtistDurationFromSong.py music.mp3
 """
 
 import json, requests
