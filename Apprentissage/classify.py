@@ -15,10 +15,9 @@ Example:
     python train.py danceModel.pkl vectorizer.pkl mySong.mp3
 """
 
-def classify(modelFile, vecFile, songFile):
+def classify(modelFile, vecFile, song):
     clf = joblib.load(modelFile)
     vec = joblib.load(vecFile)
-    song = audio.LocalAudioFile(songFile)
 
     rhythm = extractRhythm(song, N=1)
 
@@ -44,4 +43,5 @@ if __name__ == '__main__':
     except:
         print usage
         sys.exit(-1)
-    main(filename, vecName, dirName)
+    song = audio.LocalAudioFile(dirName)
+    main(filename, vecName, song)

@@ -16,7 +16,7 @@ Example:
 
 # @brief Creer une table pour les chansons.
 def createTableSong():
-	return "CREATE TABLE Song (Id VARCHAR(128), Title VARCHAR(128), Duration INT, Bpm INT, ArtistId VARCHAR(128), DanceName VARCHAR(128), PRIMARY KEY(Id), FOREIGN KEY(ArtistId) REFERENCES Artist(Id), FOREIGN KEY(DanceName) REFERENCES Dance(Name));"
+	return "CREATE TABLE Song (Title VARCHAR(128), Duration INT, Bpm INT, Artist VARCHAR(128), DanceName VARCHAR(128));"
 
 # @brief Creer une table pour conserver les chansons.
 def createTableArtist():
@@ -31,10 +31,10 @@ def createDataBase():
 	connexion = sqlite3.connect('songs.db')
 
 	connexion.execute(createTableSong())
-	connexion.execute(createTableArtist())
-	connexion.execute(createTableDance())
+	#connexion.execute(createTableArtist())
+	#connexion.execute(createTableDance())
 
-	connnxion.commit()
+	connexion.commit()
 	connexion.close()
 
 

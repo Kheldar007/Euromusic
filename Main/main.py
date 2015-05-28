@@ -9,6 +9,9 @@ import titleArtistDurationFromSong as mbrainz
 from classify import classify
 import subprocess
 
+from createDataBase import createDataBase
+import sqlite3
+
 usage = """
 Usage: 
     python <DossierDesChansons>
@@ -20,19 +23,47 @@ Example:
 def main(dirName):
     songs = songSearch(dirName)
 
-    for filename in songs:
-        subprocess.call(['sox', filename, filename+'_extract.wav', 'trim', '30', '10'])
+    createDataBase()
 
-        song = audio.LocalAudioFile(filename+'_extract.wav')
+    conn = sqlite3.connect('songs.db')
+    print "Opened database successfully";
+
+    for filename in songs:
+        subprocess.call(['sox', filename, filename+'_extract.wav', 'trim', '30', '30'])
+
+        song = None
+        while (song == None):
+            try:
+                song = audio.LocalAudioFile(filename+'_extract.wav')
+            except pyechonest.util.EchoNestAPIError:
+                print("Echo Nest lets us wait a bit. I'll sleep one minute ...")
+                time.sleep(60)
+                continue
+            except:
+                e = sys.exc_info()[0]
+                print("%s" % e)
+                print("I will sleep 10 seconds and try again ...")
+                time.sleep(10)
+
+
+        subprocess.call(['rm', filename+'_extract.wav'])
+
         bpm = extractBPM(song) # 4
         data = mbrainz.data(filename)
         duration = mbrainz.duration(data) # 3
         songData = mbrainz.searchMusic(duration, mbrainz.fingerprint(data))
         artist = mbrainz.nameArtist(mbrainz.artistsData(songData)) # 2
         title = mbrainz.title(songData) # 1
-        dance = classify('danceModel.pkl', 'vectorizer.pkl', filename) # 5
+        dance = classify('danceModel.pkl', 'vectorizer.pkl', song) # 5
 
-        print (title, artist, duration, bpm, dance)
+        
+        conn.execute("INSERT INTO Song (Title,Duration,Bpm,Artist,DanceName) VALUES ('"+title+"', "+ str(duration)+", "+ str(bpm)+", '"+artist+"', '"+dance+"'"+");")
+
+        #print (title, artist, duration, bpm, dance)
+
+    conn.commit()
+    print "Records created successfully";
+    conn.close()
 
     
 def songSearch(dirName):
