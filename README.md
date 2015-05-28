@@ -1,9 +1,17 @@
 # Euromusic
 Banques de données multimédia
 
+
+## Objectifs
+
 - Classer des extraits musicaux selon le type de danse.
 - Se baser sur le spectrogramme de la musique.
 - Cf Shazam, SoundHound
+
+
+## Utilisation
+
+- Le dossier "Main" contient les sources relatives à l'application principale.
 
 
 ## Références
