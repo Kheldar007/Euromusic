@@ -1,0 +1,151 @@
+1	Samba	100	4	7
+3	Samba	111	3	55
+6	Samba	108	4	2
+8	Samba	110	4	15
+12	Samba	129	4	61
+13	Samba	106	4	36
+14	Samba	108	4	61
+19	Samba	108	4	29
+21	Cha Cha Cha	120	4	19
+24	Cha Cha Cha	112	4	23
+26	Cha Cha Cha	168	4	35
+29	Cha Cha Cha	115	3	35
+30	Cha Cha Cha	124	4	5
+31	Cha Cha Cha	122	4	1
+32	Cha Cha Cha	51	4	57
+33	Cha Cha Cha	128	4	26
+34	Cha Cha Cha	117	4	56
+35	Cha Cha Cha	128	4	51
+36	Cha Cha Cha	120	4	9
+37	Cha Cha Cha	123	3	71
+38	Cha Cha Cha	127	4	72
+39	Cha Cha Cha	130	4	79
+40	Cha Cha Cha	126	4	59
+42	Rumba	95	4	78
+43	Rumba	110	4	19
+44	Rumba	98	4	31
+46	Rumba	98	1	18
+47	Rumba	202	5	58
+48	Rumba	116	4	46
+49	Rumba	99	1	14
+50	Rumba	68	5	14
+51	Rumba	95	4	66
+52	Rumba	96	4	34
+53	Rumba	97	4	0
+54	Rumba	192	4	12
+55	Rumba	99	4	30
+56	Rumba	98	4	34
+57	Rumba	100	4	22
+58	Rumba	96	5	56
+59	Rumba	101	4	19
+60	Rumba	184	5	52
+62	Paso Doble	122	4	44
+63	Paso Doble	63	4	62
+67	Paso Doble	124	3	76
+68	Paso Doble	127	4	11
+69	Paso Doble	172	4	68
+71	Paso Doble	106	4	39
+77	Paso Doble	125	4	42
+78	Paso Doble	86	4	21
+79	Jive	97	4	0
+80	Jive	86	4	47
+81	Jive	138	4	73
+82	Jive	85	4	17
+83	Jive	67	4	6
+84	Jive	166	4	73
+85	Jive	169	4	36
+86	Jive	83	4	52
+87	Jive	155	4	13
+88	Jive	143	4	8
+89	Jive	177	4	2
+90	Jive	138	4	11
+91	Jive	70	4	66
+92	Jive	170	4	26
+93	Jive	130	1	27
+94	Jive	140	3	27
+95	Jive	165	3	3
+96	Jive	150	4	38
+97	Jive	130	4	13
+98	Jive	177	3	26
+101	Langsamer Walzer	99	3	52
+103	Langsamer Walzer	92	4	62
+104	Langsamer Walzer	92	4	0
+106	Langsamer Walzer	56	5	1
+107	Langsamer Walzer	168	4	14
+109	Langsamer Walzer	154	4	8
+110	Langsamer Walzer	76	5	37
+111	Langsamer Walzer	91	3	13
+115	Langsamer Walzer	84	5	4
+119	Tango	116	4	21
+121	Tango	123	4	58
+122	Tango	118	4	20
+123	Tango	126	4	67
+125	Tango	133	4	20
+127	Tango	128	4	71
+128	Tango	139	4	14
+130	Tango	110	4	2
+131	Tango	192	1	11
+132	Tango	132	4	7
+133	Tango	69	5	53
+134	Tango	124	4	3
+135	Tango	113	1	61
+137	Tango	132	4	14
+139	Wiener Walzer	99	3	26
+140	Wiener Walzer	86	3	22
+141	Wiener Walzer	64	4	65
+142	Wiener Walzer	176	3	67
+143	Wiener Walzer	166	3	29
+144	Wiener Walzer	180	3	10
+145	Wiener Walzer	83	3	20
+146	Wiener Walzer	168	3	12
+147	Wiener Walzer	37	4	16
+148	Wiener Walzer	92	3	39
+149	Wiener Walzer	180	3	35
+150	Wiener Walzer	76	1	34
+151	Wiener Walzer	118	4	24
+152	Wiener Walzer	182	3	6
+153	Wiener Walzer	90	3	77
+154	Wiener Walzer	171	3	29
+155	Wiener Walzer	168	5	62
+156	Wiener Walzer	87	1	50
+157	Wiener Walzer	87	3	45
+158	Wiener Walzer	79	1	7
+159	Rumba	92	4	72
+160	Foxtrott	179	4	21
+161	Foxtrott	184	4	14
+162	Foxtrott	99	4	76
+163	Foxtrott	180	4	20
+164	Foxtrott	94	4	27
+165	Foxtrott	110	4	49
+166	Foxtrott	127	4	17
+167	Foxtrott	94	4	27
+168	Foxtrott	100	4	77
+169	Foxtrott	96	4	39
+170	Foxtrott	97	4	57
+171	Foxtrott	108	4	17
+172	Foxtrott	105	4	2
+173	Foxtrott	102	4	25
+174	Foxtrott	130	4	17
+175	Foxtrott	96	4	21
+176	Foxtrott	106	4	2
+177	Foxtrott	72	3	2
+178	Foxtrott	102	4	95
+179	Salsa	93	4	8
+180	Salsa	90	4	47
+181	Salsa	103	4	34
+182	Salsa	171	4	26
+183	Salsa	100	4	6
+184	Salsa	99	3	37
+185	Salsa	100	4	53
+186	Salsa	85	4	25
+187	Salsa	158	4	66
+188	Salsa	114	4	60
+189	Salsa	91	4	69
+190	Salsa	171	4	68
+191	Salsa	82	4	73
+192	Salsa	126	4	11
+193	Salsa	99	4	8
+195	Salsa	101	4	4
+196	Salsa	93	4	7
+197	Salsa	102	4	15
+198	Salsa	150	4	36
