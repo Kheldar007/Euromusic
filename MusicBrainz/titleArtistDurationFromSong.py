@@ -11,15 +11,14 @@ Example:
     python TitleArtistFromSong.py music.mp3
 """
 
-import json, requests, shlex
+import json, requests
 from subprocess import Popen, PIPE
 
 
 # @brief Generer une empreinte pour la musique.
 # @param filesong Le nom du fichier.mp3.
 def data(fileSong):
-	cmd = "./fpcalc " + fileSong
-	process = Popen(shlex.split(cmd), stdout = PIPE)
+	process = Popen(["fpcalc", fileSong], stdout = PIPE)
 	data = process.communicate()
 	exit_code = process.wait()
 	result = data[0]
@@ -57,6 +56,10 @@ def searchMusic(duration, fingerprint):
 	data = json.loads(resp.text) # data de type dictionnaire
 	
 	results = data["results"]
+        
+        if results == []:
+                return None
+        
 	recordings = results[0]["recordings"]
 	
 	sources = 0 # Nombre de sources pour un element du dictionnaire.
@@ -76,7 +79,10 @@ def searchMusic(duration, fingerprint):
 # @brief Titre de la chanson.
 # @param songData Les donnees relatives a la chanson.
 def title(songData):
-	result = songData["title"]
+	if songData == None:
+                return ""
+
+        result = songData["title"]
 	
 	return result
 	
@@ -95,7 +101,10 @@ def idRecording(songData):
 # @brief Informations concernant l'artiste.
 # @param songData Les donnees relatives a la chanson.
 def artistsData(songData):
-	result = songData["artists"][0]
+	if (songData == None):
+                return None
+
+        result = songData["artists"][0]
 	
 	return result
 	
@@ -109,7 +118,10 @@ def idArtist(artists):
 # @brief Nom de l'artiste.
 # @param artists L'artiste.
 def nameArtist(artists):
-	result = artists["name"]
+	if artists == None:
+                return ""
+
+        result = artists["name"]
 	
 	return result
 	
