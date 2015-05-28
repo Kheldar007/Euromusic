@@ -102,10 +102,95 @@ def extractRhythmicPattern(song):
         for i in range(0, len(barPattern)):
             if (i >= len(rhythm)):
                 rhythm.append(barPattern[i])
-            rhythm[i] += barPattern[i]
+            else:
+                rhythm[i] += barPattern[i]
 
 
     meanLoudness /= len(barPatterns)
     rhythm = map(lambda x: x/len(barPatterns), rhythm)
     rhythm = map(lambda x: x/meanLoudness - 1, rhythm)
     return rhythm
+
+
+
+def decompress_string(compressed_string):
+    import zlib, base64
+
+    compressed_string = compressed_string.encode('utf8')
+    if compressed_string == "":
+        return None
+    # do the zlib/base64 stuff
+    try:
+        # this will decode both url-safe and non-url-safe b64 
+        actual_string = zlib.decompress(base64.urlsafe_b64decode(compressed_string))
+    except (zlib.error, TypeError):
+        print "Could not decode base64 zlib string %s" % (compressed_string)
+        return None
+    return actual_string
+
+# Rhythmstring
+# ------------ 
+# With Analyzer v3.2 was introduced the rhythmstring, a binary representation of rhythmic impulses, or transients, over 8 
+# frequency channels. The encoded format goes as follows:
+# Fs Hop Nch <Nos Oi do_1 ... do_n> ... <Nos Oi do_1 ... do_n> 
+# where: 
+#    Fs: sampling rate 
+#    Hop: hop size in samples
+#    Nch: number of channels 
+#    Nos: number of onsets 
+#    Oi: initial onset frame 
+#    do_n: number of frames to the next onset
+
+def decode_string(s):
+    #l = []
+    #for i in range(0, len(s), 4):
+    #    l.append(struct.unpack('<i', s[i:i+4]))
+    #    print(l[-1])
+
+    l = [int(i) for i in s.split(' ')]
+    Fs = l.pop(0)
+    Hop = l.pop(0)
+    Nch = l.pop(0)
+    liste = []
+    n = 0
+    for i in range(Nch):
+        Nos = l[n]
+        liste.append([])
+        n += 2 # skip Nos and Oi
+        for j in range(Nos-1):
+            liste[i].append(l[n])
+            n += 1
+
+    return (Fs, liste)
+
+### framerate = samplerate / number of channels
+### duration = number of frames / framerate = nframes * nchannels / samplerate
+### hypothesis: nchannels = 1
+
+def extractRhythm(song, N=3):
+
+    decompressed_string = decompress_string(song.analysis.rhythmstring)
+    if decompressed_string == None:
+        return None
+
+    rhythms = decode_string(decompressed_string)
+    rhythm = rhythms[1][0]
+
+    for channel_string in rhythms[1][1:]:
+        for i in range(len(channel_string)):
+            if (i >= len(rhythm)):
+                rhythm.append(channel_string[i])
+            else:
+                rhythm[i] += channel_string[i]
+
+    rhythm = map(lambda x: float(x)/rhythms[0], rhythm)
+    rhythm = map(lambda x: x/len(rhythms[1]), rhythm)
+
+    #m = max(rhythm)
+    #indexes = [i for i,j in enumerate(rhythm) if j == m]
+    #print indexes
+
+    import numpy as np
+    return np.argsort(rhythm)[::-1][:N]
+
+    #return rhythm

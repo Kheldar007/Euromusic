@@ -37,8 +37,8 @@ def main(filename):
             features = {}
             features['bpm'] = fields[2]
             features['meter'] = fields[3].rstrip()
-            #features['maxTone'] = fields[4].rstrip()
-            header_length = 4
+            features['rhythm'] = fields[4].rstrip()
+            header_length = 5
             if len(fields) > header_length:
                 for i in range(8):
                     features['rhythm' + str(i)] = fields[i+header_length].rstrip()
