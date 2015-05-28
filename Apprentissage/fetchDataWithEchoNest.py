@@ -2,7 +2,7 @@
 # encoding: utf=8
 
 import echonest.remix.audio as audio
-from featureExtraction import extractBPM, extractRhythmicPattern, extractMeter
+from featureExtraction import extractBPM, extractRhythmicPattern, extractMeter, extractRhythm
 from glob import glob
 import time
 import sys
@@ -54,11 +54,13 @@ def main(filename, dirName):
                 num += 1
                 continue
 
+            rhythm = extractRhythm(song, N=1)
+
             #rhythm = extractRhythmicPattern(song)
             #m = max(rhythm)
             #indexes = [i for i, j in enumerate(rhythm) if j == m]
             #if len(rhythm) != 8:
-            data.append({'num':num, 'bpm':bpm, 'meter':meter})#, 'maxTone':indexes[0]})
+            data.append({'num':num, 'bpm':bpm, 'meter':meter, 'rhythm':rhythm[0]})#, 'maxTone':indexes[0]})
             #else:
                 #data.append({'bpm':bpm, 'meter':meter, 'rhythm0':rhythm[0], 'rhythm1':rhythm[1], 'rhythm2':rhythm[2], 'rhythm3':rhythm[3], 'rhythm4':rhythm[4], 'rhythm5':rhythm[5], 'rhythm6':rhythm[6], 'rhythm7':rhythm[7]})
             
@@ -77,8 +79,8 @@ def main(filename, dirName):
             f.write(str(data[i]['bpm']))
             f.write("\t")
             f.write(str(data[i]['meter']))
-            #f.write("\t")
-            #f.write(str(data[i]['maxTone']))
+            f.write("\t")
+            f.write(str(data[i]['rhythm']))
             if 'rhythm0' in data[i]:
                 f.write("\t")
                 f.write(str(data[i]['rhythm0']))
