@@ -14,10 +14,10 @@ import sqlite3
 
 usage = """
 Usage: 
-    python <DossierDesChansons>
+    python main.py <DossierDesChansons>
 
 Example:
-    python ~/Musique/
+    python main.py ~/Musique/
 """
 
 def main(dirName):
