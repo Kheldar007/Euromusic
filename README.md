@@ -29,27 +29,30 @@ Cette bibliothèque est necessaire pour l'analyse des chansons.
    export ECHO_NEST_API_KEY="ton API Key"
    ```
 
-4. Redémarrer la console
+- Redémarrer la console
 
-5. Il y a beaucoup d'examples dans `/usr/local/share/echo-nest-remix-examples`.  
+- Il y a beaucoup d'examples dans `/usr/local/share/echo-nest-remix-examples`.  
    Pour tester, on peut par exemple aller dans ce dossier et taper:
    ```
    python one/one.py music/Karl_Blau-Gnos_Levohs.mp3 AllOnTheOne.mp3
    ```
 
 ### SoX
+
     Ce programme est utilisé pour extraire 30 secondes de chaque chansons avant le téléchargement au serveur de Echo Nest Remix
     ```
     sudo apt-get install sox
     ```
 
 ### Chromaprint
+
     Cet outil est necessaire pour calculer le "fingerprint" d'une chanson pour l'envoyer à MusicBrainz
     ```
     sudo apt-get install libchromaprint-tools
     ```
 
 ### scikit-learn
+
     Une bibliothèque qui implémente beaucoup d'algos d'apprentissage
     ```
     sudo apt-get install python-sklearn
