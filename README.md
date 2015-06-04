@@ -39,27 +39,21 @@ Cette bibliothèque est necessaire pour l'analyse des chansons.
 
 ### SoX
 
-    Ce programme est utilisé pour extraire 30 secondes de chaque chansons avant le téléchargement au serveur de Echo Nest Remix.
+   Ce programme est utilisé pour extraire 30 secondes de chaque chansons avant le téléchargement au serveur de Echo Nest Remix.
 
-    ```
     sudo apt-get install sox
-    ```
 
 ### Chromaprint
 
-    Cet outil est necessaire pour calculer le "fingerprint" d'une chanson pour l'envoyer à MusicBrainz.
+   Cet outil est necessaire pour calculer le "fingerprint" d'une chanson pour l'envoyer à MusicBrainz.
 
-    ```
     sudo apt-get install libchromaprint-tools
-    ```
 
 ### scikit-learn
 
-    Une bibliothèque qui implémente beaucoup d'algos d'apprentissage
+   Une bibliothèque qui implémente beaucoup d'algos d'apprentissage
 
-    ```
     sudo apt-get install python-sklearn
-    ```
 
 
 ## Références
