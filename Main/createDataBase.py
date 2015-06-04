@@ -28,6 +28,11 @@ def createTableDance():
 	
 # @brief Creer la banque de donnees.
 def createDataBase():
+        import os
+
+        if os.path.isfile('songs.db'):
+                return # do nothing if database already exists
+
 	connexion = sqlite3.connect('songs.db')
 
 	connexion.execute(createTableSong())
