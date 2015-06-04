@@ -16,7 +16,7 @@ Example:
 
 # @brief Creer une table pour les chansons.
 def createTableSong():
-	return "CREATE TABLE Song (Title VARCHAR(128), Duration INT, Bpm INT, Artist VARCHAR(128), DanceName VARCHAR(128));"
+	return "CREATE TABLE Song (Title VARCHAR(128), Duration INT, Bpm INT, Artist VARCHAR(128), DanceName VARCHAR(30), FilePath VARCHAR(128));"
 
 # @brief Creer une table pour conserver les chansons.
 def createTableArtist():

@@ -56,8 +56,9 @@ def main(dirName):
         title = mbrainz.title(songData) # 1
         dance = classify('danceModel.pkl', 'vectorizer.pkl', song) # 5
 
-        
-        conn.execute("INSERT INTO Song (Title,Duration,Bpm,Artist,DanceName) VALUES ('"+title+"', "+ str(duration)+", "+ str(bpm)+", '"+artist+"', '"+dance+"'"+");")
+        statement = "INSERT INTO Song (Title,Duration,Bpm,Artist,DanceName,FilePath) VALUES ('"+title+"', "+ str(duration)+", "+ str(bpm)+", '"+artist+"', '"+dance+'\', "'+os.path.abspath(filename)+'");'
+        #print statement
+        conn.execute(statement)
 
         #print (title, artist, duration, bpm, dance)
 
