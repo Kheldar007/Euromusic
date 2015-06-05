@@ -12,14 +12,14 @@ Banques de données multimédia
 ## Utilisation
 
 - Le dossier "Main" contient l'application principale.
-- `Main/main.py` suivi par un dossier qui contient les fichiers musique lance une démonstration du programme qui catalogue la collection musicale de l'utilisateur dans une base de données SQL
-- `Apprentissage/train.py` suivi par le ficher `Apprentissage/songDataFull.tab` qui contient les données récupérées par les différentes bases de données utilisées montre le processus de l'apprentissage et calcule aussi une précision par le moyen de cross-validation 
+- `Main/main.py` suivi par un dossier qui contient les fichiers musique lance une démonstration du programme qui catalogue la collection musicale de l'utilisateur dans une base de données SQL.
+- `Apprentissage/train.py` suivi par le ficher `Apprentissage/songDataFull.tab` qui contient les données récupérées par les différentes bases de données utilisées montre le processus d'apprentissage et calcule aussi une précision par le moyen de cross-validation.
 
 ## Guide d'Installation
 Testé sous Ubuntu 14.04.2 LTS
 
 ### Echo Nest Remix
-Cette bibliothèque est necessaire pour l'analyse des chansons.
+Cette bibliothèque est nécessaire pour l'analyse des chansons.
 
 - Suivre le [guide d'installation (anglais)](http://echonest.github.io/remix/installsource.html) officiel.
 - Obtenir un [API Key](http://echonest.github.io/remix/keysetup.html).
